@@ -5,39 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel='stylesheet' type='text/css' href='./styles.css'>
     <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
 </head>
 <body>
     <div id='app'>
         <h1 v-once>{{ title }}</h1>
         <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+
+        <!-- v-html to tell the DOM tht finishedLink is html and not text. -->
         <p v-html='finishedLink'></p>
-        <button v-on:click="increase(2, $event)">Click Me</button>
-        <p>{{ counter }}</p>
+
+        <!-- v-on:click for calling the increase() function when the button is clicked. -->
+        <button v-on:click="firstIncrease(2, $event)">Click Me</button>
+        <p>{{ firstCounter }}</p>
+
+        <!-- v-on:mousemove & mousemove.stop for calling the function updateCoordinates when moving the mouse over the p tag, and the dead spot for stopping the calling of the function when moving over the p tag. -->
         <p v-on:mousemove="updateCoordinates">
             Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span>
         </p>
+
+        <!-- v-on:keyup.enter for running the alertMe function on the key up of the enter key. -->
         <input type="text" v-on:keyup.enter="alertMe">
+
+        <!-- v-model for two-way-binding -->
+        <p>{{ name }}</p>
+        <input type="text" v-model="name">
+
+        <button v-on:click="secondIncrease">Increase</button>
+        <p>Counter: {{ secondCounter }}</p>
+        <p>Result: {{ result }}</p>
     </div>
 
 <script>
     new Vue({
         el: '#app',
         data: {
+            name: 'Max',
             title: 'Hello World!',
             link: 'https://google.com',
             finishedLink: '<a href="https://google.com">Google</a>',
-            counter: 0,
+            firstCounter: 0,
             x: 0,
-            y: 0
+            y: 0,
+            secondCounter: 0,
+            result: ''
         },
         methods: {
             sayHello: function() {
                 this.title = 'Hello!';
                 return this.title;
             },
-            increase: function(step, event) {
-                this.counter += step;
+            firstIncrease: function(step, event) {
+                this.firstCounter += step;
             },
             updateCoordinates: function(e) {
                 this.x = e.clientX;
@@ -45,6 +65,10 @@
             },
             alertMe: function(){
                 alert('Alert!');
+            },
+            secondIncrease: function() {
+                this.secondCounter++;
+                this.result = this.secondCounter > 5 ? 'Greater 5' : 'Smaller 5';
             }
         }
     })

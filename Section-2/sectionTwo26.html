@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel='stylesheet' type='text/css' href='./styles.css'>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+</head>
+<body>
+    <div id='app'>
+        <!-- use @ sign instead of v-on: -->
+        <button @click="changeLink">Click to change link</button>
+        <!-- use just a colon : instead of v-bind:  -->
+        <p :href="link">Link</p>
+    </div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            link: 'https://google.com',
+        },
+        methods: {
+            changeLink: function() {
+                this.link = 'https://apple.com';
+            }
+        }
+    })
+</script>
+</body>
+</html>
