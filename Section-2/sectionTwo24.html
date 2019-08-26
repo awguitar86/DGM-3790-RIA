@@ -24,11 +24,11 @@
             counter: 0,
             secondCounter: 0
         },
-        computed: { // computed properties always need to be ran sycronously.
+        computed: { // Computed properties always need to be ran sycronously. Computed properties are cached.
           output: function() {
               console.log('Computed');
               return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
-          }  
+          }
         },
         watch: {
             counter: function(value) {
