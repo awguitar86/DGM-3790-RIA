@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Monster Slayer</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+    <section class="loading-game" v-show="loadingGame">
+        <h1>LOADING GAME . . .</h1>
+    </section>
+    <section class="row" v-show="!loadingGame">
+        <div class="small-6 columns">
+            <h1 class="text-center"><span v-if="turn" style="color:blue;">&bull;</span>You</h1>
+            <div class="healthbar" :style="youLose">
+                <div class="healthbar text-center" :style="youStyles">
+                    <p>{{ youHealth > 0 ? youHealth : '' }}</p>
+                </div>
+            </div>
+            <div class="power-wrap">
+                <p>Power</p>
+                <div class="power">
+                    <div class="power" :style="youPowerStyles"></div>
+                </div>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <h1 class="text-center"><span v-if="!turn" style="color:blue;">&bull;</span>{{ !swapiChar ? "Loading Opponent..." : swapiChar }}</h1>
+            <div class="healthbar" :style="monsterLose">
+                <div class="healthbar text-center" :style="monsterStyles">
+                        <p>{{ monsterHealth > 0 ? monsterHealth : '' }}</p>
+                </div>
+            </div>
+            <div class="power-wrap">
+                <p>Power</p>
+                <div class="power">
+                    <div class="power" :style="monsterPowerStyles"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row controls" v-show="!startGame" v-if="!loadingGame">
+        <div class="small-12 columns">
+            <button id="start-game" @click="startNewGame">START NEW GAME</button>
+        </div>
+    </section>
+    <section class="row controls" v-show="startGame">
+        <div class="small-12 columns">
+            <button id="attack" @click="attack">ATTACK</button>
+            <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+            <button id="block" @click="block">BLOCK</button>
+            <button id="heal" @click="heal">HEAL</button>
+            <button id="obliterate" :disabled="youPowerStatus" @click="obliterate" v-if="turn">OBLITERATE</button>
+            <button id="obliterate" :disabled="monsterPowerStatus" @click="obliterate" v-else>OBLITERATE</button>
+            <button id="give-up" @click="giveUp">GIVE UP</button>
+        </div>
+    </section>
+    <section class="row log" v-show="startGame">
+        <div class="small-12 columns">
+            <ul>
+                <li v-for="(hit, i) in hits" :key="`hit${i}`" :class="i % 2 === 0 ? 'player-log' : 'monster-log'">{{ hit }}</li>
+            </ul>
+        </div>
+    </section>
+    <section class="modal-wrap" v-show="gameOver">
+        <div class="modal">
+            <h1>{{ monsterHealth === 0 ? "YOU WIN!" : "YOU LOSE." }}</h1>
+            <button id="new-game" @click="startNewGame">New Game</button>
+        </div>
+    </section>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
