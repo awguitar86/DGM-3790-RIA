@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <app-user></app-user>
+                <appUser></appUser>
             </div>
         </div>
     </div>

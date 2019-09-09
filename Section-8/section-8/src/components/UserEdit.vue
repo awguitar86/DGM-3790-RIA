@@ -9,7 +9,7 @@
 </script>
 
 <style scoped>
-    div {
+    .component {
         background-color: lightgreen;
     }
 </style>
