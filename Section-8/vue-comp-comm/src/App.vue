@@ -1,26 +1,29 @@
 <template>
-  <div id="app">
-  </div>
+  <v-app>
+    <v-content>
+      <Header/>
+        <Guitars/>
+      <Footer/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-  import Header from './components/Header.vue'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Guitars from './components/Guitars';
+import GuitarDetails from './components/GuitarDetails';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    Header
-  }
-}
+    Header,
+    Footer,
+    Guitars,
+    GuitarDetails
+  },
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
