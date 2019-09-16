@@ -2,7 +2,10 @@
   <v-app>
     <v-content>
       <Header/>
-        <Guitars/>
+        <div class="body">
+          <Guitars/>
+          <GuitarDetails/>
+        </div>
       <Footer/>
     </v-content>
   </v-app>
@@ -27,3 +30,10 @@ export default {
   }),
 };
 </script>
+
+<style media="screen" type="scss">
+  .body {
+    display: flex;
+    
+  }
+</style>
