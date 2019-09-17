@@ -25,15 +25,11 @@ export default {
     Guitars,
     GuitarDetails
   },
-  data: () => ({
-    //
-  }),
 };
 </script>
 
 <style media="screen" type="scss">
   .body {
     display: flex;
-    
   }
 </style>

@@ -1,18 +1,20 @@
 <template>
-  <v-container>
-    <v-footer app dark>
-        <div class="flex-grow-1"></div>
-        <div>&copy; {{ new Date().getFullYear() }}</div>
-    </v-footer>
-  </v-container>
+  <v-list-item @click="guitarSelect">
+    <v-list-item-content>
+      <v-list-item-title>{{ guitar.name}}</v-list-item-title>
+    </v-list-item-content>
+  </v-list-item>
 </template>
-
 <script>
-export default {
-  data: () => ({
-
-  })
-};
+  import { eventBus } from '../main';
+  export default {
+    props: ['guitar'],
+    methods: {
+      guitarSelect() {
+        eventBus.$emit('guitarSelected', this.server);
+      }
+    }
+  };
 </script>
 
 <style lang="sass">
