@@ -12,20 +12,20 @@
 </template>
 
 <script>
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Guitars from './components/Guitars';
-import GuitarDetails from './components/GuitarDetails';
+  import Header from './components/Header';
+  import Footer from './components/Footer';
+  import Guitars from './components/Guitars';
+  import GuitarDetails from './components/GuitarDetails';
 
-export default {
-  name: 'App',
-  components: {
-    Header,
-    Footer,
-    Guitars,
-    GuitarDetails
-  },
-};
+  export default {
+    name: 'App',
+    components: {
+      Header,
+      Footer,
+      Guitars,
+      GuitarDetails
+    },
+  };
 </script>
 
 <style media="screen" type="scss">
