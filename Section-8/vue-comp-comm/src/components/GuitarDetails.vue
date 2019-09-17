@@ -7,78 +7,35 @@
       <v-img
         src="https://axeheaven.files.wordpress.com/2012/03/ft-004_3_960x11201.jpg"
         height="300px"
-        dark
       >
-        <v-row class="fill-height">
-          <v-card-title class="white--text pl-8 pt-12">
-            <div class="display-1 pl-8 pt-12">Fender Telecaster</div>
+        <v-row class="fill-height d-flex justify-start align-end">
+          <v-card-title>
+            <div class="white--text pl-4 pb-2">Fender Telecaster</div>
           </v-card-title>
         </v-row>
       </v-img>
 
       <v-list two-line>
-        <v-list-item @click="">
-          <v-list-item-icon>
-            <v-icon color="indigo">mdi-phone</v-icon>
-          </v-list-item-icon>
-
+        <v-list-item>
           <v-list-item-content>
-            <v-list-item-title>(650) 555-1234</v-list-item-title>
-            <v-list-item-subtitle>Mobile</v-list-item-subtitle>
-          </v-list-item-content>
-
-          <v-list-item-icon>
-            <v-icon>mdi-message-text</v-icon>
-          </v-list-item-icon>
-        </v-list-item>
-
-        <v-list-item @click="">
-          <v-list-item-action></v-list-item-action>
-
-          <v-list-item-content>
-            <v-list-item-title>(323) 555-6789</v-list-item-title>
-            <v-list-item-subtitle>Work</v-list-item-subtitle>
-          </v-list-item-content>
-
-          <v-list-item-icon>
-            <v-icon>mdi-message-text</v-icon>
-          </v-list-item-icon>
-        </v-list-item>
-
-        <v-divider inset></v-divider>
-
-        <v-list-item @click="">
-          <v-list-item-icon>
-            <v-icon color="indigo">mdi-email</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>aliconnors@example.com</v-list-item-title>
-            <v-list-item-subtitle>Personal</v-list-item-subtitle>
+            <p>
+              The 2017 Limited Edition American Professional Mahogany Tele Deluxe ShawBucker is loaded with a pair of fat-sounding ShawBucker humbucking pickups.
+              Voiced specifically for each position, the ShawBucker pickups add a new dimension of depth to the guitar’s voice. Topped by 22 narrow-tall frets
+              for easy bending, the 9.5 in.-radius maple fingerboard is ideal for most playing styles, offering enough arc for comfortable chording while remaining fat enough for wide bends.
+            </p>
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item @click="">
-          <v-list-item-action></v-list-item-action>
+        <v-divider></v-divider>
 
-          <v-list-item-content>
-            <v-list-item-title>ali_connors@example.com</v-list-item-title>
-            <v-list-item-subtitle>Work</v-list-item-subtitle>
-          </v-list-item-content>
+        <v-list-item class="d-flex align-center justify-space-between">
+          <div class="d-flex align-cnter">
+            <v-icon color="indigo mr-3">mdi-currency-usd</v-icon>
+            <h3>1,999.99</h3>
+          </div>
+          <v-btn>Change Price</v-btn>
         </v-list-item>
 
-        <v-divider inset></v-divider>
-
-        <v-list-item @click="">
-          <v-list-item-icon>
-            <v-icon color="indigo">mdi-map-marker</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>1400 Main Street</v-list-item-title>
-            <v-list-item-subtitle>Orlando, FL 79938</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-card>
   </v-container>

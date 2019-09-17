@@ -1,14 +1,9 @@
 <template>
   <v-container>
     <v-simple-table>
-      <thead>
-        <tr>
-          <th class="text-left">Guitars</th>
-        </tr>
-      </thead>
       <tbody>
         <!-- <tr v-for="item in desserts" :key="item.name"> -->
-        <tr>
+        <tr class="">
           <td>Fender Telecaster</td>
         </tr>
       </tbody>
