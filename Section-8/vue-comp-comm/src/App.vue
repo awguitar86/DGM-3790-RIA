@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-content class="d-flex flex-column align-center">
       <Header/>
         <div class="body">
           <Servers/>
@@ -30,6 +30,7 @@
 
 <style media="screen" type="scss">
   .body {
+    width: 50vw;
     display: flex;
   }
 </style>

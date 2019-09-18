@@ -1,5 +1,5 @@
 <template>
-  <v-list-item @click="serverSelect">
+  <v-list-item @click="serverSelect" class="elevation-1">
     <v-list-item-content>
       <v-list-item-title>Server #{{ server.id}}</v-list-item-title>
     </v-list-item-content>
