@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <v-content>
+    <v-content class="d-flex flex-column align-center">
       <Header/>
         <div class="body">
-          <Guitars/>
-          <GuitarDetails/>
+          <Servers/>
+          <ServerDetails/>
         </div>
       <Footer/>
     </v-content>
@@ -14,22 +14,23 @@
 <script>
   import Header from './components/Header';
   import Footer from './components/Footer';
-  import Guitars from './components/Guitars';
-  import GuitarDetails from './components/GuitarDetails';
+  import Servers from './components/Servers';
+  import ServerDetails from './components/ServerDetails';
 
   export default {
     name: 'App',
     components: {
       Header,
       Footer,
-      Guitars,
-      GuitarDetails
+      Servers,
+      ServerDetails
     },
   };
 </script>
 
 <style media="screen" type="scss">
   .body {
+    width: 50vw;
     display: flex;
   }
 </style>
