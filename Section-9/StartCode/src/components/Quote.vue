@@ -1,20 +1,33 @@
 <template>
     <div>
-        <p>A Wonderful Quote!</p>
+        <div class="title">
+            <slot name="title"></slot>
+            <span style="color:#ccc;"><slot name="subtitle">The Subtitle</slot></span>
+        </div>
+        <hr>
+        <div>
+            <slot></slot>
+        </div>
     </div>
 </template>
 
 <script>
-export default {
-    
-}
+    export default {
+    }
 </script>
 
-<style lang="stylus" scoped>
+<style scoped>
     div {
         border: solid 1px #ccc;
         box-shadow: 1px 1px 2px black;
         padding: 30px;
-        margin: auto;
+        margin: 30px auto;
+        text-align: center;
+    }
+    /* h2 {
+        color: red;
+    } */
+    .title {
+        font-style: italic;
     }
 </style>
