@@ -9,7 +9,7 @@ const mutations = {
         if(record) {
             record.quantity + quantity;
         } else {
-            tate.stocks.push({
+            state.stocks.push({
                 id: stockId,
                 quantity: quantity
             });
@@ -24,7 +24,11 @@ const mutations = {
             state.stocks.splice(state.stocks.indexOf(record), 1);
         }
         state.funds += stockPrice * quantity;
-    } 
+    },
+    'SET_PORTFOLIO'(state, portfolio) {
+        state.funds = portfolio.funds;
+        state.stocks = portfolio.stockPortfolio ? portfolio.stockPortfolio : [];
+    }
 };
 
 const actions = {
@@ -36,7 +40,7 @@ const actions = {
 const getters = {
     stockPortfolio(state, getters) {
         return state.stocks.map(stock => {
-            const record = getters.stocks.find(el => el.id == stockId);
+            const record = getters.stocks.find(el => el.id == stock.id);
             return {
                 id: stock.id,
                 quantity: stock.quantity,
